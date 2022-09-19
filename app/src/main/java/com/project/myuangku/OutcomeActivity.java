@@ -1,4 +1,4 @@
-package com.project.mycashbook;
+package com.project.myuangku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.project.mycashbook.DataBase.DataBaseAccess;
+import com.project.myuangku.DataBase.DataBaseAccess;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-public class IncomeActivity extends AppCompatActivity {
+public class OutcomeActivity extends AppCompatActivity {
 
     Button simpan, kembali;
     EditText nominal, keterangan;
@@ -37,7 +37,7 @@ public class IncomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_income);
+        setContentView(R.layout.activity_outcome);
 
         simpan = findViewById(R.id.simpan);
         kembali = findViewById(R.id.kembali);
@@ -58,7 +58,7 @@ public class IncomeActivity extends AppCompatActivity {
                 int mMonth = c.get(Calendar.MONTH);
                 int mDay = c.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(IncomeActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(OutcomeActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         try {
@@ -77,19 +77,20 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(nominal.getText().toString().equals("") || keterangan.getText().toString().equals("")){
-                    Toast.makeText(IncomeActivity.this, "Harap Lengkapi Data Anda", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OutcomeActivity.this, "Harap Lengkapi Data Anda", Toast.LENGTH_SHORT).show();
                 } else {
                     Integer jumlah = Integer.valueOf(nominal.getText().toString());
-                    DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(IncomeActivity.this);
+
+                    DataBaseAccess dataBaseAccess = DataBaseAccess.getInstance(OutcomeActivity.this);
                     dataBaseAccess.open();
 
-                    boolean isInserted = dataBaseAccess.insertMoney(jumlah, keterangan.getText().toString(), tanggal.getText().toString(), "income");
+                    boolean isInserted = dataBaseAccess.insertMoney(jumlah, keterangan.getText().toString(), tanggal.getText().toString(), "outcome");
 
                     if(isInserted){
-                        Toast.makeText(IncomeActivity.this, "Berhasil Memasukkan Pemasukkan", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(IncomeActivity.this, MenuActivity.class));
+                        Toast.makeText(OutcomeActivity.this, "Berhasil Memasukkan Pengeluaran", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(OutcomeActivity.this, MenuActivity.class));
                     } else {
-                        Toast.makeText(IncomeActivity.this, "Gagal Memasukkan Pemasukkan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(OutcomeActivity.this, "Gagal Memasukkan Pengeluaran", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -98,7 +99,7 @@ public class IncomeActivity extends AppCompatActivity {
         kembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(IncomeActivity.this, MenuActivity.class));
+                startActivity(new Intent(OutcomeActivity.this, MenuActivity.class));
             }
         });
     }
@@ -106,6 +107,6 @@ public class IncomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(IncomeActivity.this, MenuActivity.class));
+        startActivity(new Intent(OutcomeActivity.this, MenuActivity.class));
     }
 }

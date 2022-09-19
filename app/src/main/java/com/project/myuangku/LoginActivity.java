@@ -1,4 +1,4 @@
-package com.project.mycashbook;
+package com.project.myuangku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.project.mycashbook.DataBase.DataBaseAccess;
+import com.project.myuangku.DataBase.DataBaseAccess;
 
 public class LoginActivity extends AppCompatActivity {
 

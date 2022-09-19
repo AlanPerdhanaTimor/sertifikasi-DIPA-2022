@@ -1,4 +1,4 @@
-package com.project.mycashbook;
+package com.project.myuangku;
 
 import org.junit.Test;
 

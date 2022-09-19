@@ -1,4 +1,4 @@
-package com.project.mycashbook;
+package com.project.myuangku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 //import com.github.mikephil.charting.charts.LineChart;
 //import com.github.mikephil.charting.data.Entry;
 //
 //import com.github.mikephil.charting.data.LineData;
 //import com.github.mikephil.charting.data.LineDataSet;
-import com.project.mycashbook.DataBase.DataBaseAccess;
-
-import java.util.ArrayList;
+import com.project.myuangku.DataBase.DataBaseAccess;
 
 public class MenuActivity extends AppCompatActivity {
 

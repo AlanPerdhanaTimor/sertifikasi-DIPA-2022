@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.project.mycashbook;
+package com.project.myuangku;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");

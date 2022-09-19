@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.project.mycashbook">
+    package="com.project.myuangku">
 
     <application
         android:allowBackup="false"
@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCashBook">
         <activity
-            android:name=".SettingActivity"
+            android:name="com.project.myuangku.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name="com.project.myuangku.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".OutcomeActivity"
+            android:name="com.project.myuangku.OutcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".IncomeActivity"
+            android:name="com.project.myuangku.IncomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name="com.project.myuangku.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.project.myuangku.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
